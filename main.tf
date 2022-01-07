@@ -1,5 +1,5 @@
 resource "aws_security_group" "security_group" {
-  name   = var.security_group_name
+  name   = "${var.environment}-${var.security_group_name}"
   vpc_id = var.vpc_id
 
   dynamic ingress {
@@ -38,5 +38,6 @@ resource "aws_security_group" "security_group" {
   tags = {
      Name = var.security_group_name
      Deployment_Method = "terraform"
+     Environment = var.environment
   }
 }

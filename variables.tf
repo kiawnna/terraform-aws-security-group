@@ -1,7 +1,13 @@
 variable "vpc_id" {
   type = string
+  default = null
 }
 variable "security_group_name" {
+  type = string
+  default = "my-security-group"
+}
+
+variable "environment" {
   type = string
 }
 
@@ -36,4 +42,5 @@ variable "egress_rules" {
     protocol    = string
     cidr_block  = string
   }))
+  default = []
 }
