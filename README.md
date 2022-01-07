@@ -47,8 +47,9 @@ module "ec2-security_group" {
 ## Outputs
 The security group id and name. Referenced as:
 
-    module.sg_module_name.security_group_id
-    module.sg_module)name.security_group_name
+> module.sg_module_name.security_group_id
+>
+> module.sg_module)name.security_group_name
 
 ## Variables / Customization
 Ability to define two types of ingress rules:
@@ -58,4 +59,4 @@ Both are lists of objects. A single object represents a single rule.
 
 A vpc id is not required but can be provided.
 
-See the variables.tf file for further customizations.
+See the `variables.tf` file for further customizations.
