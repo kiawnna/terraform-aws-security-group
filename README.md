@@ -2,7 +2,7 @@
 A secure, best-practice module that creates an easily configurable security group, with functionality for both cidr block and security group ingress rules.
 
 ## Instantiation
-The simplest instantiation requires only an environment. Below is an example with all three types of dynamic rules shown.
+The simplest instantiation requires only an `environment`. Below is an example with all three types of dynamic rules shown.
 
 ```
 module "ec2-security_group" {
@@ -60,3 +60,14 @@ Both are lists of objects. A single object represents a single rule.
 A vpc id is not required but can be provided.
 
 See the `variables.tf` file for further customizations.
+
+## Tags
+Tags are automatically added to all resources where possible. Tags will have the following format:
+
+```
+tags = {
+    Name = "shared-${var.environment}-resource"
+    Deployment_Method = "terraform"
+    Environment = var.environment
+  }
+```
